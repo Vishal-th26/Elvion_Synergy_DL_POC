@@ -1,0 +1,19 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Jupyter
+.ipynb_checkpoints/
+
+# ML artifacts 
+*.pt
+*.pth
+*.pkl
+
+# Data
+data/
+datasets/
+
+# OS
+Thumbs.db
+.DS_Store
