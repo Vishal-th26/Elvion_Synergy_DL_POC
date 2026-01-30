@@ -34,19 +34,24 @@ ARGUS aims to go beyond detection by enabling:
 
 🏗️ System Architecture (POC)
 Sentinel-1 SAR Images (VV, VH)
+
         ↓
         
 
 Preprocessing & Normalization
+
         ↓
 
 CNN-based Semantic Segmentation (U-Net)
+        
         ↓
 
 Flood Mask Prediction (POC)
+        
         ↓
 
 Flood Severity Estimation 
+        
         ↓
 
 (Planned) Priority Scoring & Resource Allocation
