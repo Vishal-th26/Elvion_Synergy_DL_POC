@@ -11,27 +11,26 @@ The focus is on system feasibility, architecture, and extensibility, not final p
 
 Floods cause massive damage to lives and infrastructure, yet most existing systems:
 
-Only provide static flood maps
+•Only provide static flood maps
 
-Do not help decision-makers prioritize regions
+•Do not help decision-makers prioritize regions
 
-Fail under cloud cover or extreme weather
+•Fail under cloud cover or extreme weather
 
 ARGUS aims to go beyond detection by enabling:
 
-Reliable flood mapping from SAR data
-
-Backend intelligence for data-driven response prioritization
+•Reliable flood mapping from SAR data
+•Backend intelligence for data-driven response prioritization
 
 🧠 What ARGUS Does (POC Scope)
 
-Detects flooded regions using satellite imagery
+•Detects flooded regions using satellite imagery
 
-Generates pixel-level flood masks
+•Generates pixel-level flood masks
 
-Produces structured outputs for downstream decision layers
+•Produces structured outputs for downstream decision layers
 
-Demonstrates feasibility of AI-assisted disaster response systems
+•Demonstrates feasibility of AI-assisted disaster response systems
 
 🏗️ System Architecture (POC)
 Sentinel-1 SAR Images (VV, VH)
@@ -39,19 +38,15 @@ Sentinel-1 SAR Images (VV, VH)
         
 
 Preprocessing & Normalization
-        
         ↓
 
 CNN-based Semantic Segmentation (U-Net)
-
         ↓
 
 Flood Mask Prediction (POC)
-
         ↓
 
 Flood Severity Estimation 
-
         ↓
 
 (Planned) Priority Scoring & Resource Allocation
@@ -62,68 +57,68 @@ The system is modular, allowing future upgrades without redesigning the pipeline
 📊 Data Used
 Dataset
 
-ECTI 2021 Flood Detection Dataset
+•ECTI 2021 Flood Detection Dataset
 
-Satellite source: Sentinel-1 SAR
+•Satellite source: Sentinel-1 SAR
 
-Tile size: 256 × 256
+•Tile size: 192 × 192
 
 Why SAR?
 
-Works day & night
+•Works day & night
 
-Penetrates clouds and rain
+•Penetrates clouds and rain
 
-Reliable during extreme weather events
+•Reliable during extreme weather events
 
 Input Channels
 
-VV polarization
+•VV polarization
 
-VH polarization
+•VH polarization
 
-Derived VV/VH ratio (pseudo-RGB)
+•Derived VV/VH ratio (pseudo-RGB)
 
 ⚙️ Preprocessing Pipeline
 
-Intensity normalization to [0, 1]
+•Intensity normalization to [0, 1]
 
-Conversion of SAR bands into 3-channel input
+•Conversion of SAR bands into 3-channel input
 
-Resizing to fixed resolution
+•Resizing to fixed resolution
 
-Optional data augmentation (flip, resize)
+•Optional data augmentation (flip, resize)
 
 🧩 Model Details (POC)
 Architecture
 
-Model: U-Net (Semantic Segmentation)
+•Model: U-Net (Semantic Segmentation)
 
-Encoder: ResNet-34
+•Encoder: ResNet-34
 
-Pretraining: ImageNet (transfer learning)
+•Pretraining: ImageNet (transfer learning)
 
-Framework: PyTorch
+•Framework: PyTorch
 
 Why U-Net?
 
-Designed for pixel-level tasks
+•Designed for pixel-level tasks
 
-Efficient on limited data
+•Efficient on limited data
 
-Proven in medical & satellite imaging
+•Proven in medical & satellite imaging
 
 🏋️ Training Strategy (POC)
 
-Transfer learning enabled
+•Transfer learning enabled
 
-Limited epochs due to compute & time constraints
+•Limited epochs due to compute & time constraints
 
-Dataset undersampling for faster iteration
+•Dataset undersampling for faster iteration
 
-Loss function: Cross-Entropy Loss
+•Loss function: Cross-Entropy Loss
 
-Mixed precision training (AMP)
+•Mixed precision training (AMP)
 
 The model is intentionally lightweight and serves as a functional demonstration, not a final trained system.
 
@@ -131,11 +126,11 @@ The model is intentionally lightweight and serves as a functional demonstration,
 
 Binary flood segmentation mask:
 
-Flooded vs Non-Flooded pixels
+•Flooded vs Non-Flooded pixels
 
-Outputs are designed to feed into:
+•Outputs are designed to feed into:
 
-Severity estimation
+•Severity estimation
 
 Priority scoring modules (future work)
 
@@ -143,11 +138,11 @@ Priority scoring modules (future work)
 
 Sample outputs include:
 
-SAR input images
+•SAR input images
 
-Predicted flood masks
+•Predicted flood masks
 
-Water body vs flood differentiation
+•Water body vs flood differentiation
 
 📁 Visuals & demo outputs are provided via Drive (linked in PPT / submission).
 
